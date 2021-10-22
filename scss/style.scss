@@ -1,0 +1,18 @@
+body {
+  background: radial-gradient(
+    circle at 52.1% -29.6%,
+    rgb(62, 6, 95) 0%,
+    rgb(0, 0, 0) 100.2%
+  );
+  color: yellow;
+
+  .card {
+    color: yellow;
+    border: 1px solid #fefbf3;
+    border-radius: 4px;
+    padding: 15px;
+    margin: 15px;
+    margin-top: 35px;
+    background-color: #000;
+  }
+}
