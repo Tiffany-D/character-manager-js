@@ -8,7 +8,9 @@ body {
   );
   color: #3dad5b;
   font-family: "Irish Grover", cursive;
-
+  .container {
+    margin: auto;
+  }
   .row {
     display: grid;
     grid-template-columns: 20% 20% 20% 20%;
@@ -53,12 +55,12 @@ body {
     border: none;
     padding: 6px;
     font-family: "Rajdhani", sans-serif;
-    :hover {
-      cursor: pointer;
-      transition: ease-in-out;
-      background-color: #3e065f;
-      color: #3dad5b;
-    }
+  }
+  button:hover {
+    cursor: pointer;
+    transition: ease-in-out;
+    background-color: #3e065f;
+    color: #3dad5b;
   }
   .add {
     display: block;
