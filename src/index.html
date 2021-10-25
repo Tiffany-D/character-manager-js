@@ -18,18 +18,19 @@
     </header>
     </div>
     <hr>
+    <template id="character-tpl">
     <div class="container">
     <div class="row center-xs center-sm center-md center-lg">
 
         <div class="col-xs-12 col-sm-8 col-md-6 col-lg-3 card">
-          <img src="https://i.picsum.photos/id/866/200/300.jpg?hmac=rcadCENKh4rD6MAp6V_ma-AyWv641M4iiOpe1RyFHeI" alt="lorem-picsum">
-          <h5>Name of the character</h5>
-          <p>Sumikat ito noong 1960s kasabay ng pag labas ng Letraset sheets na mayroong mga talata ng Lorem Ipsum, at kamakailan
+          <img class="photo-home" src="https://i.picsum.photos/id/866/200/300.jpg?hmac=rcadCENKh4rD6MAp6V_ma-AyWv641M4iiOpe1RyFHeI" alt="lorem-picsum">
+          <h5 class="name-home">Name of the character</h5>
+          <p class="description-home">Sumikat ito noong 1960s kasabay ng pag labas ng Letraset sheets na mayroong mga talata ng Lorem Ipsum, at kamakailan
           lang sa mga desktop publishing software tulad ng.</p>
           <button id="see-character">See character</button>
         </div>
-
-        <div class="col-xs-12 col-sm-8 col-md-6 col-lg-3 card">
+</template>
+       <!--<div class="col-xs-12 col-sm-8 col-md-6 col-lg-3 card">
           <img src="https://i.picsum.photos/id/866/200/300.jpg?hmac=rcadCENKh4rD6MAp6V_ma-AyWv641M4iiOpe1RyFHeI"
             alt="lorem-picsum">
           <h5>Name of the character</h5>
@@ -60,7 +61,10 @@
           </div>
 
     </div>
-    </div>
+    </div>--> 
+    <section>
+      <ol id="display-card-character"></ol>
+    </section>
     <button class="add">Add a new character to the collection</button>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
   <script src="../js/script.js"></script>
