@@ -40,6 +40,7 @@ body {
     font-family: "Rajdhani", sans-serif;
     font-size: 16px;
     color: #9d84b7;
+
   }
   button {
     background-color: #3dad5b;
@@ -63,7 +64,8 @@ body {
     margin: 32px auto;
   }
   input {
-    color: grey;
+    color: #3dad5b;
+    margin:10px;
   }
   .color {
     background: radial-gradient(
@@ -75,36 +77,7 @@ body {
   .title {
     color: #3dad5b;
   }
-  .save {
-    background-color: #3dad5b;
-    color: #3e065f;
-    font-family: "Rajdhani", sans-serif;
-    font-size: 18px;
-    border-radius: 8px;
-    border: none;
-  }
-  .save:hover {
-    cursor: pointer;
-    transition: ease-in-out;
-    background-color: #3e065f;
-    color: #3dad5b;
-  }
-  .delete {
-    background-color: #3dad5b;
-    color: #3e065f;
-    font-family: "Rajdhani", sans-serif;
-    font-size: 18px;
-    border-radius: 8px;
-    border: none;
-  }
-  .delete:hover {
-    background-color: #3dad5b;
-    color: #3e065f;
-    cursor: pointer;
-    transition: ease-in-out;
-  }
 }
-
 
 .modal-header
 {

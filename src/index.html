@@ -8,11 +8,6 @@
     <link rel="stylesheet" href="./flexboxgrid.css">
     <link rel="stylesheet" href="../scss/style.scss">
     <title>Character Manager App</title>
-
-    <link rel="stylesheet" href="../style.scss">
-
-
-    <title>Document</title>
   </head>
   <body>
     <div class="container">
@@ -30,13 +25,9 @@
           <h5 class="name-home">Name of the character</h5>
           <p class="description-home">Sumikat ito noong 1960s kasabay ng pag labas ng Letraset sheets na mayroong mga talata ng Lorem Ipsum, at kamakailan
           lang sa mga desktop publishing software tulad ng.</p>
-
           <button id="see-character" type="button"  data-bs-toggle="modal" data-bs-target="#staticBackdrop">See character</button>
       </div>
 </template>
-
-        </div>
-    </template>
 
     <!-- Modal -->
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -73,18 +64,18 @@
     <div class="modal-content">
       <div class="modal-header color">
         <h5 class="modal-title title" id="exampleModalLabel">Create new character</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button type="button" class="btn btn-close btn-danger" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body color">
         <form>
           <input type="file" id="img" name="img" accept="image/*">
-      <input type="text" value="Name of the character">
-      <input type="text" value="Add description">
+          <input type="text" value="Name of the character">
+          <input type="text" value="Add description">
     </form>
       </div>
       <div class="modal-footer color">
-        <button type="button" class="save">Save changes</button>
-        <button type="button" class="delete" data-bs-dismiss="modal">Delete character</button>
+        <button type="button" class="save btn btn-warning">Save changes</button>
+        <button type="button" class="delete btn btn-danger" data-bs-dismiss="modal">Delete character</button>
       </div>
     </div>
   </div>
