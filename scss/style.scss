@@ -61,4 +61,45 @@ body {
     display: block;
     margin: 32px auto;
   }
+  input {
+    color: grey;
+  }
+  .color {
+    background: radial-gradient(
+      circle at 52.1% -29.6%,
+      rgb(62, 6, 95) 0%,
+      rgb(0, 0, 0) 100.2%
+    );
+  }
+  .title {
+    color: #3dad5b;
+  }
+  .save {
+    background-color: #3dad5b;
+    color: #3e065f;
+    font-family: "Rajdhani", sans-serif;
+    font-size: 18px;
+    border-radius: 8px;
+    border: none;
+  }
+  .save:hover {
+    cursor: pointer;
+    transition: ease-in-out;
+    background-color: #3e065f;
+    color: #3dad5b;
+  }
+  .delete {
+    background-color: #3dad5b;
+    color: #3e065f;
+    font-family: "Rajdhani", sans-serif;
+    font-size: 18px;
+    border-radius: 8px;
+    border: none;
+  }
+  .delete:hover {
+    background-color: #3dad5b;
+    color: #3e065f;
+    cursor: pointer;
+    transition: ease-in-out;
+  }
 }
