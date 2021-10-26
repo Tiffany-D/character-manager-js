@@ -63,3 +63,46 @@ body {
     margin: 32px auto;
   }
 }
+
+
+.modal-header
+{
+  background: radial-gradient(
+                  circle at 52.1% -29.6%,
+                  rgb(62, 6, 95) 0%,
+                  rgb(0, 0, 0) 100.2%
+  );
+}
+.modal-body
+{
+  background: radial-gradient(
+                  circle at 52.1% -29.6%,
+                  rgb(62, 6, 95) 0%,
+                  rgb(0, 0, 0) 100.2%
+  );
+}
+.modal-footer
+{
+  background: radial-gradient(
+                  circle at 52.1% -29.6%,
+                  rgb(62, 6, 95) 0%,
+                  rgb(0, 0, 0) 100.2%
+  );
+}
+
+.btn {
+  background-color: #3dad5b;
+  color: #3e065f;
+  font-weight: bold;
+  font-family: "Irish Grover", cursive;
+  font-size: 18px;
+  border-radius: 8px;
+  border: none;
+  padding: 6px;
+  font-family: "Rajdhani", sans-serif;
+}
+
+.btn-close
+{
+  opacity: 1;
+}
