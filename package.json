@@ -23,6 +23,7 @@
     "sass": "^1.43.3"
   },
   "dependencies": {
-    "axios": "^0.23.0"
+    "axios": "^0.23.0",
+    "babel-polyfill": "^6.26.0"
   }
 }
