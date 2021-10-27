@@ -4,10 +4,12 @@ const axios = require('axios');
 const template = document.querySelector('#character-tpl');
 const imageBase64 = "data:image/jpeg;base64";
 const makeCharacterCardsAppear = document.querySelector("#display-card-character");
+const addPostForm = document.querySelector('.add-post-form')
+const url = 'https://character-database.becode.xyz/characters'
 
 // Display all cards
 const makeDisplayCardAppear = async () => {
-    const api = await fetch('https://character-database.becode.xyz/characters');
+    const api = await fetch(url);
     let response = await api.json();
     console.log(response);
 
@@ -18,17 +20,15 @@ const makeDisplayCardAppear = async () => {
         let pictureOfTheCharacter = characterTemplate.querySelector(".photo-home");
         let buttonOfTheCharacter = characterTemplate.querySelector("#see-character");
 
-
         nameOfTheCharacter.textContent = elem.name;
         buttonOfTheCharacter.setAttribute("idChar",elem.id)
         shortDescriptionCharacter.textContent = elem.shortDescription;
         pictureOfTheCharacter.src = `${imageBase64}, ${elem.image}`;
         makeCharacterCardsAppear.appendChild(characterTemplate);
-
     }
 
     const getCharDetails = async (id) => {
-       const response = await fetch(`https://character-database.becode.xyz/characters/${id}`)
+       const response = await fetch(`${url}/${id}`)
        return await  response.json()
     }
 
@@ -39,9 +39,14 @@ const makeDisplayCardAppear = async () => {
             showCard(char)
         })
     })
+
+    addPostForm.addEventListener('submit',(e)=>{
+        e.preventDefault()
+        console.log('form submited')
+    })
 }
 
-const showCard = async (char) => // on défini les values aux champs 
+const showCard = async (char) => // on défini les values aux champs
 {
     document.querySelector('.modal-title').textContent = char.name
     document.querySelector('.modal-image').src = `data:image/jpeg;base64,${char.image}`
@@ -49,3 +54,4 @@ const showCard = async (char) => // on défini les values aux champs
 }
 // Display all cards
 makeDisplayCardAppear();
+
