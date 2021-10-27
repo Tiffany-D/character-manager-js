@@ -2,9 +2,9 @@
 
 body {
   background: radial-gradient(
-    circle at 52.1% -29.6%,
-    rgb(62, 6, 95) 0%,
-    rgb(0, 0, 0) 100.2%
+                  circle at 52.1% -29.6%,
+                  rgb(62, 6, 95) 0%,
+                  rgb(0, 0, 0) 100.2%
   );
   color: #3dad5b;
   font-family: "Irish Grover", cursive;
@@ -67,11 +67,16 @@ body {
     color: #3dad5b;
     margin:10px;
   }
+
+  li
+  {
+    list-style: none;
+  }
   .color {
     background: radial-gradient(
-      circle at 52.1% -29.6%,
-      rgb(62, 6, 95) 0%,
-      rgb(0, 0, 0) 100.2%
+                    circle at 52.1% -29.6%,
+                    rgb(62, 6, 95) 0%,
+                    rgb(0, 0, 0) 100.2%
     );
   }
   .title {
