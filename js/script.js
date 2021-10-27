@@ -42,7 +42,7 @@ const makeDisplayCardAppear = async () => {
 
     addPostForm.addEventListener('submit',(e)=>{
         e.preventDefault()
-        console.log('form submited')
+        console.log('form submitted')
     })
 }
 

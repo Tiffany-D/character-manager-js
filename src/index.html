@@ -13,6 +13,11 @@
 <div class="container">
   <header>
     <h1>Character Manager</h1>
+    <!--Modal "Add character"-->
+    <!-- Button trigger modal -->
+    <button type="button" class="add" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      Add a new character to the collection
+    </button>
   </header>
 </div>
 <hr>
@@ -52,11 +57,7 @@
 <section class="container">
   <ol id="display-card-character" class="row center-xs center-sm center-md center-lg"></ol>
 </section>
-<!--Modal "Add character"-->
-<!-- Button trigger modal -->
-<button type="button" class="add" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Add a new character to the collection
-</button>
+
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -76,7 +77,7 @@
           </ul>
           <div class="modal-footer color">
             <button type="submit" class="save btn btn-warning">Save changes</button>
-            <button type="button" class="delete btn btn-danger" data-bs-dismiss="modal">Delete character</button>
+            <button type="button" class="delete btn btn-danger" data-bs-dismiss="modal">Cancel character</button>
           </div>
         </form>
       </div>
