@@ -24,18 +24,6 @@ const makeDisplayCardAppear = async () => {
     pictureOfTheCharacter.src = `${imageBase64}, ${elem.image}`;
     
     
-    //display characters details in modal (see character).
-    let nameModal = document.querySelector(".modal-title");
-    let descModal = document.querySelector(".modal-body");
-    let imageModal = document.querySelector(".image-modal");
-   
-
-    nameModal.textContent = elem.name;
-    descModal.textContent = elem.description;
-    imageModal.src = `${imageBase64},${elem.image}`;
-    
-    
-    
     makeCharacterCardsAppear.appendChild(characterTemplate);
 }
     }
@@ -70,14 +58,24 @@ changeModalsDetails();
 
 
 
-// document.querySelector("#see-character").addEventListener("click",async () => {
-//   const getId = await fetch('https://character-database.becode.xyz/characters');
-//   const responseJson = await getId.json();
-
-  
-// });
-
-
 //Delete
+(() => {
+  
+  const input = document.querySelector('#display-card-character');
+  
 
-//axios.delete('https://character-database.becode.xyz/characters');
+  document.querySelector('#delete').addEventListener("click", async () => {
+    try {
+      const data = await fetch('https://character-database.becode.xyz/' + input.value, {
+        method: 'DELETE'
+      });
+      if (!data.ok) throw new Error(data.statusText)
+      const char = await fetch('https://character-database.becode.xyz/id');
+      const resJson = await char.json();
+      console.log(resJson);
+
+    } catch (err) {
+      alert(err);
+    }
+  });
+})();
