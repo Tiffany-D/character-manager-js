@@ -3,6 +3,7 @@ import "regenerator-runtime/runtime";
 //const axios = require('axios');
 
 const template = document.querySelector('#character-tpl');
+const edit = document.querySelector('#update-character');
 const imageBase64 = "data:image/jpeg;base64";
 const makeCharacterCardsAppear = document.querySelector("#display-card-character");
 const addPostForm = document.querySelector('.add-post-form')
@@ -60,6 +61,7 @@ const makeDisplayCardAppear = async () => {
             inputPreview.src = fileReader.result
         }
     })
+ 
     // partie POST cards
     addPostForm.addEventListener('submit',async (e)=>{
         e.preventDefault()
@@ -111,18 +113,38 @@ const showCard = async (char) => // on défini les values aux champs
   });
 
   //Put request 
-  document.querySelector("#edit").addEventListener('click', async()=>{
-      let idEdit = localStorage["stored"];
-      let alertSureOrNot = confirm('Sure you want to edit ?');
-      if (alertSureOrNot != true) {
+//   document.querySelector("#save").addEventListener('click', async()=>{
+//       let idEdit = localStorage["stored"];
+//       let alertSureOrNot = confirm('Sure you want to edit ?');
+//       if (alertSureOrNot != true) {
           
-      }else{
-          await fetch (`https://character-database.becode.xyz/characters/${idEdit}`, { method: 'PUT' });
-      }
-  })
+//       }else{
+         
+//           let formData = {
+//             name:document.querySelector('#name').value,
+//             image:inputPreview.src.split(',')[1],
+//             description:document.querySelector('#longDescription').value,
+//             shortDescription:document.querySelector('#shortDescription').value
+//         }
+//         if(formData.name && formData.image && formData.description && formData.shortDescription) {
+
+//             const result = await fetch(url, {
+//                 method: 'PUT',
+//                 headers: {
+//                     "Content-Type": "application/json"
+//                 },
+//                 body: JSON.stringify(formData)
+//             });
+//             location.reload();
+//         }
+//         else
+//         {
+//             alert('champs vides')
+//         }
+//       }
+//   })
   
-
-
+  
 
 
 // Display all cards
