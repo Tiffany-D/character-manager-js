@@ -13,6 +13,11 @@
 <div class="container">
   <header>
     <h1>Character Manager</h1>
+    <!--Modal "Add character"-->
+    <!-- Button trigger modal -->
+    <button type="button" class="add" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      Add a new character to the collection
+    </button>
   </header>
 </div>
 <hr>
@@ -35,10 +40,10 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="staticBackdropLabel">Character title</h5>
-        <img src="" alt="test" class="modal-image">
         <button type="button" class="btn-close btn btn-danger" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
+        <img src="" alt="test" class="modal-image">
         <p class="long-description">long description</p>
       </div>
       <div class="modal-footer">
@@ -52,11 +57,7 @@
 <section class="container">
   <ol id="display-card-character" class="row center-xs center-sm center-md center-lg"></ol>
 </section>
-<!--Modal "Add character"-->
-<!-- Button trigger modal -->
-<button type="button" class="add" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Add a new character to the collection
-</button>
+
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -70,17 +71,18 @@
         <form class="add-post-form">
           <ul>
             <li> <input type="file" id="img" name="img" accept="image/*"></li>
-            <li><input type="text" value="Name"></li>
-            <li><input type="text" value="Short description"></li>
-            <li><input type="text" value="Long description"></li>
+            <li><img src="" alt="preview" id="preview"></li>
+            <li><input type="text" placeholder="Name" id="name"></li>
+            <li><input type="text" placeholder="Short description" id="shortDescription"></li>
+            <li><input type="text" placeholder="Long description" id="longDescription"></li>
           </ul>
-
+          <div class="modal-footer color">
+            <button type="submit" class="save btn btn-warning">Save changes</button>
+            <button type="button" class="delete btn btn-danger" data-bs-dismiss="modal">Cancel character</button>
+          </div>
         </form>
       </div>
-      <div class="modal-footer color">
-        <button type="submit" class="save btn btn-warning">Save changes</button>
-        <button type="button" class="delete btn btn-danger" data-bs-dismiss="modal">Delete character</button>
-      </div>
+
     </div>
   </div>
 

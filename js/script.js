@@ -5,11 +5,15 @@ import "regenerator-runtime/runtime";
 const template = document.querySelector('#character-tpl');
 const imageBase64 = "data:image/jpeg;base64";
 const makeCharacterCardsAppear = document.querySelector("#display-card-character");
+const addPostForm = document.querySelector('.add-post-form')
+const url = 'https://character-database.becode.xyz/characters'
+const inputImage = document.querySelector('#img')
+const inputPreview = document.querySelector('#preview')
 
 
 // Display all cards
 const makeDisplayCardAppear = async () => {
-    const api = await fetch('https://character-database.becode.xyz/characters');
+    const api = await fetch(url);
     let response = await api.json();
     console.log(response);
 
@@ -19,7 +23,6 @@ const makeDisplayCardAppear = async () => {
         let shortDescriptionCharacter = characterTemplate.querySelector(".description-home");
         let pictureOfTheCharacter = characterTemplate.querySelector(".photo-home");
         let buttonOfTheCharacter = characterTemplate.querySelector("#see-character");
-
 
         nameOfTheCharacter.textContent = elem.name;
         buttonOfTheCharacter.setAttribute("idChar",elem.id)
@@ -37,7 +40,7 @@ const makeDisplayCardAppear = async () => {
     }
 
     const getCharDetails = async (id) => {
-       const response = await fetch(`https://character-database.becode.xyz/characters/${id}`)
+       const response = await fetch(`${url}/${id}`)
        return await  response.json()
     }
 
@@ -48,9 +51,45 @@ const makeDisplayCardAppear = async () => {
             showCard(char)
         })
     })
+
+    inputImage.addEventListener('change', () =>{
+    const fileReader = new FileReader()
+        fileReader.readAsDataURL(inputImage.files[0])
+        fileReader.onload = ()=>
+        {
+            inputPreview.src = fileReader.result
+        }
+    })
+    // partie POST cards
+    addPostForm.addEventListener('submit',async (e)=>{
+        e.preventDefault()
+
+        let formData = {
+            name:document.querySelector('#name').value,
+            image:inputPreview.src.split(',')[1],
+            description:document.querySelector('#longDescription').value,
+            shortDescription:document.querySelector('#shortDescription').value
+        }
+        if(formData.name && formData.image && formData.description && formData.shortDescription) {
+
+            const result = await fetch(url, {
+                method: 'POST',
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(formData)
+            });
+            location.reload();
+        }
+        else
+        {
+            alert('champs vides')
+        }
+    })
+
 }
 
-const showCard = async (char) => // on défini les values aux champs 
+const showCard = async (char) => // on défini les values aux champs
 {
     document.querySelector('.modal-title').textContent = char.name
     document.querySelector('.modal-image').src = `data:image/jpeg;base64,${char.image}`
@@ -88,6 +127,8 @@ const showCard = async (char) => // on défini les values aux champs
 
 // Display all cards
 makeDisplayCardAppear();
+
+
 
 
 
