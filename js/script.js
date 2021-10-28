@@ -6,6 +6,9 @@ const imageBase64 = "data:image/jpeg;base64";
 const makeCharacterCardsAppear = document.querySelector("#display-card-character");
 const addPostForm = document.querySelector('.add-post-form')
 const url = 'https://character-database.becode.xyz/characters'
+const inputImage = document.querySelector('#img')
+const inputPreview = document.querySelector('#preview')
+
 
 // Display all cards
 const makeDisplayCardAppear = async () => {
@@ -40,10 +43,41 @@ const makeDisplayCardAppear = async () => {
         })
     })
 
-    addPostForm.addEventListener('submit',(e)=>{
-        e.preventDefault()
-        console.log('form submitted')
+    inputImage.addEventListener('change', () =>{
+    const fileReader = new FileReader()
+        fileReader.readAsDataURL(inputImage.files[0])
+        fileReader.onload = ()=>
+        {
+            inputPreview.src = fileReader.result
+        }
     })
+    // partie POST cards
+    addPostForm.addEventListener('submit',async (e)=>{
+        e.preventDefault()
+
+        let formData = {
+            name:document.querySelector('#name').value,
+            image:inputPreview.src.split(',')[1],
+            description:document.querySelector('#longDescription').value,
+            shortDescription:document.querySelector('#shortDescription').value
+        }
+        if(formData.name && formData.image && formData.description && formData.shortDescription) {
+
+            const result = await fetch(url, {
+                method: 'POST',
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(formData)
+            });
+            location.reload();
+        }
+        else
+        {
+            alert('champs vides')
+        }
+    })
+
 }
 
 const showCard = async (char) => // on défini les values aux champs
