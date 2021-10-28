@@ -6,6 +6,7 @@ const template = document.querySelector('#character-tpl');
 const imageBase64 = "data:image/jpeg;base64";
 const makeCharacterCardsAppear = document.querySelector("#display-card-character");
 
+
 // Display all cards
 const makeDisplayCardAppear = async () => {
     const api = await fetch('https://character-database.becode.xyz/characters');
@@ -25,6 +26,13 @@ const makeDisplayCardAppear = async () => {
         shortDescriptionCharacter.textContent = elem.shortDescription;
         pictureOfTheCharacter.src = `${imageBase64}, ${elem.image}`;
         makeCharacterCardsAppear.appendChild(characterTemplate);
+
+        //Store id of the character in localStorage
+       buttonOfTheCharacter.addEventListener('click', ()=>{
+           localStorage["stored"]=elem.id;
+
+       });
+
 
     }
 
@@ -50,12 +58,19 @@ const showCard = async (char) => // on défini les values aux champs
 }
 
 //Delete request
-(() => {
-  const deleteRequest = document.querySelector("#delete").addEventListener = ("click");
-  console.log(deleteRequest);
-  fetch('https://character-database.becode.xyz/characters/', { method: 'DELETE' });
+
+  document.querySelector("#delete").addEventListener ("click", async()=>{
+      let idOfTheCharacter=localStorage["stored"] ;
+      let confirmAlert = confirm('Are you sure you want to delete this character ?');
+      if (confirmAlert!= true) {
+          console.log('cancel');
+      }else{
+          await fetch (`https://character-database.becode.xyz/characters/${idOfTheCharacter}`, { method: 'DELETE' });
+          console.log('ok');
+      }
+  });
   
-})();
+
 
 
 
