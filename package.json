@@ -5,10 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "parcel src/index.html",
-    "build": "build parcel src/index.html",
-    "start": "parcel ./*.html",
-    "predeploy": "rm -rf dist && parcel build ./*.html --public-url" "https://github.com/Tiffany-D/character-manager-js",
-    "deploy": "gh-pages -d dist"
+    "build": "build parcel src/index.html"
+  
   },
   "repository": {
     "type": "git",
