@@ -132,7 +132,24 @@ body {
   padding: 6px;
   font-family: "Rajdhani", sans-serif;
 }
+.btn:hover{
+  background-color:#3dad5b;
+}
 
 .btn-close {
   opacity: 1;
+}
+a{
+  text-decoration: none;
+  color: #3e065f;
+
+}
+a:hover{
+  text-decoration: none;
+  background-color:#3dad5b;
+  color: #3e065f;
+}
+#save:hover{
+background-color:#3dad5b;
+  color: #3e065f;
 }
