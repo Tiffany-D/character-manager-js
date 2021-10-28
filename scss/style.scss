@@ -3,9 +3,9 @@
 body {
 
   background: radial-gradient(
-                  circle at 52.1% -29.6%,
-                  rgb(62, 6, 95) 0%,
-                  rgb(0, 0, 0) 100.2%
+    circle at 52.1% -29.6%,
+    rgb(62, 6, 95) 0%,
+    rgb(0, 0, 0) 100.2%
   );
   color: #3dad5b;
   font-family: "Irish Grover", cursive;
@@ -41,7 +41,6 @@ body {
     font-family: "Rajdhani", sans-serif;
     font-size: 16px;
     color: #9d84b7;
-
   }
   button {
     background-color: #3dad5b;
@@ -66,47 +65,59 @@ body {
   }
   input {
     color: #3dad5b;
-    margin:10px;
+    margin: 10px;
   }
 
-  li
-  {
+  li {
     list-style: none;
   }
   .color {
     background: radial-gradient(
-                    circle at 52.1% -29.6%,
-                    rgb(62, 6, 95) 0%,
-                    rgb(0, 0, 0) 100.2%
+      circle at 52.1% -29.6%,
+      rgb(62, 6, 95) 0%,
+      rgb(0, 0, 0) 100.2%
     );
   }
   .title {
     color: #3dad5b;
   }
+  .save {
+    background-color: #3dad5b;
+    color: #3e065f;
+    font-family: "Rajdhani", sans-serif;
+    font-size: 18px;
+    border-radius: 8px;
+    border: none;
+  }
+  .delete {
+    background-color: #3dad5b;
+    color: #3e065f;
+    font-family: "Rajdhani", sans-serif;
+    font-size: 18px;
+    border-radius: 8px;
+    border: none;
+  }
 }
 
-.modal-header
-{
+.modal-header {
   background: radial-gradient(
-                  circle at 52.1% -29.6%,
-                  rgb(62, 6, 95) 0%,
-                  rgb(0, 0, 0) 100.2%
+    circle at 52.1% -29.6%,
+    rgb(62, 6, 95) 0%,
+    rgb(0, 0, 0) 100.2%
   );
 }
-.modal-body
-{
+.modal-body {
   background: radial-gradient(
-                  circle at 52.1% -29.6%,
-                  rgb(62, 6, 95) 0%,
-                  rgb(0, 0, 0) 100.2%
+    circle at 52.1% -29.6%,
+    rgb(62, 6, 95) 0%,
+    rgb(0, 0, 0) 100.2%
   );
 }
-.modal-footer
-{
+.modal-footer {
   background: radial-gradient(
-                  circle at 52.1% -29.6%,
-                  rgb(62, 6, 95) 0%,
-                  rgb(0, 0, 0) 100.2%
+    circle at 52.1% -29.6%,
+    rgb(62, 6, 95) 0%,
+    rgb(0, 0, 0) 100.2%
   );
 }
 
@@ -122,7 +133,6 @@ body {
   font-family: "Rajdhani", sans-serif;
 }
 
-.btn-close
-{
+.btn-close {
   opacity: 1;
 }
