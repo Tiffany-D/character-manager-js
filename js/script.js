@@ -67,8 +67,20 @@ const showCard = async (char) => // on défini les values aux champs
       }else{
           await fetch (`https://character-database.becode.xyz/characters/${idOfTheCharacter}`, { method: 'DELETE' });
           console.log('ok');
+          location.reload();
       }
   });
+
+  //Put request 
+  document.querySelector("#edit").addEventListener('click', async()=>{
+      let idEdit = localStorage["stored"];
+      let alertSureOrNot = confirm('Sure you want to edit ?');
+      if (alertSureOrNot != true) {
+          
+      }else{
+          await fetch (`https://character-database.becode.xyz/characters/${idEdit}`, { method: 'PUT' });
+      }
+  })
   
 
 
