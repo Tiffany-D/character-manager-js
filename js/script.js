@@ -106,6 +106,7 @@ const showCard = async (char) => // on défini les values aux champs
       }else{
           await fetch (`https://character-database.becode.xyz/characters/${idOfTheCharacter}`, { method: 'DELETE' });
           console.log('ok');
+          location.reload();
       }
   });
   
