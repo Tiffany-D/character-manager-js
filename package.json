@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start": "parcel src/index.html",
-    "build": "build parcel src/index.html"
+    "build": "build parcel src/index.html",
+    "start": "parcel ./*.html",
+    "predeploy": "rm -rf dist && parcel build ./*.html --public-url",
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
